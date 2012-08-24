@@ -1,0 +1,91 @@
+\contentsline {chapter}{\numberline {1}Fluctuation Domains in Adaptive Evolution}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Theoretical construction}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Model}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}The Fluctuation Equation}{4}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Fluctuation Domains}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}An Example of Fluctuation Domains in Resource Competition}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}An Ecological Model of Implicit Competition for a Limiting Resource}{8}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Numerical simulation of stochastic evolutionary trajectories}{9}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Comparison of Theory and Simulation}{9}{subsection.1.4.3}
+\contentsline {subsubsection}{Fluctuation-Dissipation Domain}{11}{subsection.1.4.3}
+\contentsline {subsubsection}{Fluctuation-Enhancement Domain}{11}{subsection.1.4.3}
+\contentsline {subsubsection}{Strong Fluctuations}{11}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Discussion}{12}{section.1.5}
+\contentsline {section}{\numberline {1.6}Acknowledgements}{13}{section.1.6}
+\contentsline {chapter}{\numberline {2}Is your phylogeny informative? \\Measuring the power of comparative methods}{14}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{14}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Are phylogenies informative?}{14}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Common phylogenetic models}{15}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Methods}{17}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Uncertainty in parameter estimates}{17}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}The Monte Carlo approach}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Model selection}{22}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}An example using {\it Anolis} data}{22}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}The anoles data}{22}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Models for the {\it Anolis} phylogeny}{23}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Results}{25}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Quantification of model choice}{27}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Information criteria often fail to choose the correct model}{27}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Applied to non-nested models}{28}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}When the data are insufficient to distinguish between models}{28}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Understanding the role of phylogeny shape and size on estimates of selection}{31}{section.2.5}
+\contentsline {section}{\numberline {2.6}Discussion}{32}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}A parallelized package for the computational methods}{34}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Guidelines for analysis}{34}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}Acknowledgements}{35}{section.2.7}
+\contentsline {chapter}{\numberline {3}Treebase: An R package for discovery, access and manipulation of online phylogenies}{36}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{36}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Programmatic Web Access}{38}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Basic queries}{38}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Accessing all phylogenies}{39}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Data discovery in TreeBASE}{39}{section.3.2}
+\contentsline {section}{\numberline {3.3}Reproducible computations}{41}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Obtaining the tree}{42}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Analyses across many phylogenies}{43}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Tests across many phylogenies}{44}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Conclusion}{45}{section.3.5}
+\contentsline {section}{\numberline {3.6}Acknowledgements}{46}{section.3.6}
+\contentsline {chapter}{\numberline {4}rfishbase: exploring, manipulating and visualizing FishBase data from R}{50}{chapter.4}
+\contentsline {section}{\numberline {4.1}Abstract}{50}{section.4.1}
+\contentsline {subparagraph}{keywords}{50}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}Accessing FishBase data from R}{51}{section.4.3}
+\contentsline {section}{\numberline {4.4}Tools for data extraction, analysis, and visualization}{53}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Comparative studies}{58}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Integration of analyses}{59}{section.4.5}
+\contentsline {section}{\numberline {4.6}Discussion}{62}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}The self-updating study}{62}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Limitations and future directions}{62}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Acknowledgements}{63}{section.4.7}
+\contentsline {chapter}{\numberline {5}Quantifying Limits to Detection of Early Warning for Critical Transitions}{64}{chapter.5}
+\contentsline {section}{\numberline {5.1}The summary statistics approach}{65}{section.5.1}
+\contentsline {section}{\numberline {5.2}A model based approach}{69}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Simulation-based comparisons}{73}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Example Results}{75}{section.5.3}
+\contentsline {section}{\numberline {5.4}Comparing the performance of summary statistics and model-based approaches}{81}{section.5.4}
+\contentsline {section}{\numberline {5.5}Discussion}{84}{section.5.5}
+\contentsline {section}{\numberline {5.6}Acknowledgments}{86}{section.5.6}
+\contentsline {chapter}{\numberline {6}Early Warning Signals and the Prosecutor's Fallacy}{87}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{87}{section.6.1}
+\contentsline {section}{\numberline {6.2}Methods and Results}{89}{section.6.2}
+\contentsline {section}{\numberline {6.3}Discussion}{92}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Chance transitions are false positives for early warning signals}{94}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Comparing to the model-based method}{95}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Acknowledgements}{95}{section.6.4}
+\contentsline {chapter}{\numberline {A}APPENDIX 1}{96}{appendix.A}
+\contentsline {section}{\numberline {A.1}Adaptive Dynamics and the Transition Probability $w(y|x)$}{96}{section.A.1}
+\contentsline {section}{\numberline {A.2}Linear Noise Approximation}{97}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}About the approximation}{97}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Original jump moments}{98}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}The linear noise approximation}{99}{subsection.A.2.3}
+\contentsline {section}{\numberline {A.3}Chemostat Model}{101}{section.A.3}
+\contentsline {section}{\numberline {A.4}Branching Model}{102}{section.A.4}
+\contentsline {section}{\numberline {A.5}Explicit solutions for examples}{103}{section.A.5}
+\contentsline {chapter}{\numberline {B}treebase Appendix}{104}{appendix.B}
+\contentsline {section}{\numberline {B.1}Reproducible computation: A diversification rate analysis}{104}{section.B.1}
+\contentsline {chapter}{\numberline {C}Code for Prosecutors Fallacy}{107}{appendix.C}
+\contentsline {subsubsection}{Conditional distribution}{108}{equation.C.0.3}
+\contentsline {subsubsection}{Null distribution}{109}{equation.C.0.3}
+\contentsline {subsection}{\numberline {C.0.1}Plot the distributions}{111}{subsection.C.0.1}
+\contentsline {chapter}{Bibliography}{111}{section*.5}

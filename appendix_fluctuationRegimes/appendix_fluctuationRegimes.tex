@@ -1,0 +1,194 @@
+\input{../settings/boilerplate}
+
+\chapter{APPENDIX 1}
+ 
+\section{Adaptive Dynamics and the Transition Probability $w(y|x)$}\label{AdaptiveDynamics}
+ 
+In this appendix we construct the Markov process $w(y|x)$ under the assumptions of adaptive dynamics~\citep{dieckmann_jmb1996}.  The probability per unit time of making the transition in trait space from a monomorphic population with trait $x$ to one with trait $y$ is given by
+\begin{equation}
+	w(y|x)=\mathcal{M}(y,x)\mathcal{D}(y,x).
+\end{equation}
+In the framework presented here, a monomorphic population of residents  with trait $x$ generate mutants with trait $y$, some of which survive.
+The rate at which a mutation is generated from a population is 
+\begin{equation}
+	\mathcal{M}(y,x) = \mu(x) b(x) N^{\ast}(x)M(x, y),
+\end{equation}
+where $b(x)$ is the per-capita birth rate at equilibrium, $\mu(x)$ the mutation probability per birth, $N^{\ast}(x)$ the equilibrium population size for a population with trait $x$, and $M(x, y)$ is the distribution from which the mutant trait is drawn.  The probability of surviving accidental extinction of a branching process given the mean individual birth rate $b$ and mean death rate $d$ for the mutant $y$ is $\mathcal{D}(y,x)=1-d(y,x)/b(y,x)$ if $d(y,x)<b(y,x)$ and $\mathcal{D}(y,x)=0$ otherwise~\citep{feller1968}.  The terms $b(y,x)$ and $d(y,x)$ refer to the birth and death rate, respectively, of a rare mutant with trait $y$ in an equilibrium population of $x$.  
+ 
+Given a mutant strategy $y$ such that $\mathcal{D}(y,x)>0$ we have
+\begin{equation}
+	\label{solved_w}
+	w(y|x) = \mu(x) N^{\ast}(x) b(x) M(x, y)[b(y,x) - d(y,x)]/b(y,x).
+\end{equation}
+Expanding the fitness, $b(y,x)-d(y,x)$, to first order 
+the transition rate is then
+\begin{equation}
+	\label{approx_w}
+	w(y|x) \approx \mu(x) N^{\ast}(x) \partial_y s(y,x)|_{y=x} M(x, y)[y-x] ,
+\end{equation}
+where $\partial_y s(y,x)|_{y=x}$ is known as the selective derivative~\citep{geritz_prl1997}.  From Eq.~\eqref{approx_w} one can apply a particular model by specifying expressions for the mutation rate $\mu(x)$, stationary population size, $N^{\ast}(x)$, fitness function $s(y,x)$ and mutational kernel $M(x,y)$.  In the competition for a limited resource model,~\citep{dieckmann_nat1999} used here, these are:
+ 
+\begin{align}
+	\mu(x) &= \mu, \nonumber \\
+	M(y,x) &= \tfrac{1}{\sqrt{2\pi\sigma_{\mu}^2}}e^{-\frac{(y-x)^2}{2\sigma_{\mu}^2}}, \nonumber \\ 
+	s(y,x) &= r\left(1-\frac{N^{\ast}(y)  e^{-\frac{(x-y)^2}{2\sigma_c^2}}  }{N^{\ast}(x)}\right), \nonumber \\
+	N^{\ast}(x) &= K_0e^{-\frac{x^2}{2\sigma_k^2}}. \label{explicitS}
+\end{align}
+Consequently, the evolutionary transition rates in for this model are given by
+\begin{equation}
+	w(y|x) = -\mu  K_0e^{-\frac{x^2}{2\sigma_k^2}} \frac{rx}{\sigma_k^2} \frac{e^{-\frac{(y-x)^2}{2\sigma_{\mu}^2}} }{\sqrt{2\pi\sigma_{\mu}^2}}[y-x].
+	\label{example_w}
+\end{equation}
+ 
+The transition rate $w(y|x)$ for the explicit resource competition model is presented along with the model details in Appendix~\ref{ChemostatModel}.  Using the appropriate transition rate in the linear noise approximation described in Appendix~\ref{LinearNoiseApproximation}, we recover the equations for the curves plotted in Fig.~\ref{1} which are integrated to obtain the theoretical predictions of Fig.~\ref{2}.  These explicit expressions are given in Appendix~\ref{Equations}. 
+ 
+\section{Linear Noise Approximation}\label{LinearNoiseApproximation}
+\subsection{About the approximation}
+The linear noise approximation is a common approach for describing Markov processes.  Though often applied in discrete cases such as one-step (birth-death) processes, it can be generalized to the continuous case we consider, where a population at trait $x$ can jump to another trait value $y$. The approximation transforms the Markov process specified by a master equation on the transition rates $w(y|x)$ to an approximate partial differential equation (PDE) for the probability distribution.  This PDE resembles the Fokker-Planck equation for the process\footnote{Indeed, they are equivalent if transition rates are linear -- in which case the PDE is also exact.}, except that the PDE resulting from the linear noise approximation is guaranteed to be linear and its solutions Gaussian.  Consequently, solving for the two moments, the mean and variance, will lead to a system of ordinary differential equations.  Substituting the form of $w(y|x)$ found in Appendix~\ref{AdaptiveDynamics} into this ODE system recovers Eq.~\eqref{explicitCanonical} and~\eqref{explicitFluctuation} in the text.   
+ 
+The approximation is straight-forward (involving a change of variables and a Taylor expansion), if cumbersome.  The approximation is rigorously justified over any fixed time interval $T$ in the limit of small step sizes~\citep{kurtz_1971}, which parallels more modern justification of the Canonical equation~\citep{champagnat_2001}.  The original derivation of the canonical equation makes use of (unscaled) jump moments, introduced by \citet{vankampen_book2001}.  We review this approach first, as it provides a good intuition for the full linear noise approximation.  The actual approximation relies on a change of variables which makes explicit use of the small step sizes, and \emph{derives} rather than assumes the Gaussian character of the distribution.  
+\subsection{Original jump moments}
+The dynamics of the average phenotypic trait are given by
+\begin{equation}
+	\frac{\mathrm{d} \hat x(t)}{\mathrm{d} t} = \int \mathrm{d} x \phantom \cdot x \frac{\mathrm{d}}{\mathrm{d} t} P(x,t).
+\end{equation}
+Using the master equation
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d} t} P(x, t) = \int \mathrm{d} y\  \left[ w(x|y)P(y, t) - w(y|x) P(x,t)\right],
+\end{equation}
+to replace $\tfrac{\mathrm{d}}{\mathrm{d} t} P(x,t)$ and performing a change of variables, we find,
+\begin{equation}
+	\frac{\mathrm{d} \hat x(t)}{\mathrm{d} t} = \int \mathrm{d} x \int \mathrm{d} y [y-x] w(y|x)P(x,t).
+\end{equation}
+Defining the $k$th jump moment as $a_k = \int (y-x)^k w(y|x) \mathrm{d} y$, the dynamics can be written as,
+\begin{equation}
+	\frac{\mathrm{d} \hat x(t)}{\mathrm{d} t} = \langle a_1(x) \rangle . \label{exact1}
+\end{equation}
+It is by no means obvious if or when the deterministic path approximation $\langle a_1(x) \rangle \approx a_1(\langle x \rangle )$ is valid, as $a_1$ will often be nonlinear.  The justification lies in the linear noise approximation.  Proceeding as above, we also find an expression for the second moment,  
+ 
+\begin{equation}
+	\frac{\mathrm{d} \langle x^2(t) \rangle }{\mathrm{d} t} = 2\langle x a_1(x) \rangle + \langle a_2(x) \rangle \label{exact2} . 
+\end{equation}
+Which again, we will only be able to solve by means of the linear noise approximation.   
+\subsection{The linear noise approximation}
+To justify this step we will change into variables where we can have an explicit parameter $\varepsilon$ that relates to the step size. The trait $x$ is approximated by an average or macroscopic value $\phi$ and a deviation $\xi$ that scales with the mutational step size $\varepsilon$; $x = \phi + \varepsilon \xi$.  Defining $r \equiv y-x$ expand the transition rate $w(y|x)$ in powers of $\varepsilon$, 
+ 
+\begin{equation}
+w(y|x) = f(\varepsilon) \left[ \Phi_0(\varepsilon x; r ) +  \varepsilon \Phi_1(\varepsilon x; r ) + \varepsilon^2 \Phi_2+\ldots \right],
+\label{transformed_w}
+\end{equation}
+where the $\Phi$ terms in the expansion are functions in which $\varepsilon$ appears only in terms of $\varepsilon x$.  The function $f(\varepsilon)$ indicates that we can rescale the entire process by some arbitrary factor of $\varepsilon$ since it can always be absorbed into the timescale.  We can then define the transformed jump moments as moments of $\Phi$ rather than $w$,
+ 
+\begin{equation}
+\alpha_{\nu, \lambda}(X) = \int r^{\nu} \Phi_{\lambda}(X,r) \mathrm{d} r . 
+\end{equation}
+ 
+The probability $P(x,t)$ is expressed in terms of the new variables $P(\phi(t) + \varepsilon \xi, t) = \Pi(\xi,t)$, and the master equation~\eqref{evo.eq.master} becomes:
+ 
+\begin{align}
+\frac{\partial }{\partial \tau}\Pi(\xi, \tau) & - \varepsilon^{-1} \frac{\mathrm{d} \phi}{\mathrm{d} \tau} \frac{\partial }{\partial \xi}\Pi(\xi, \tau) \nonumber \\
+=& - \varepsilon^{-1} \frac{\partial}{\partial \xi} \alpha_{1,0}(\phi(\tau) + \varepsilon \xi) \cdot \Pi(\xi, \tau) \nonumber \\
++& \frac{1}{2} \frac{\partial^2}{\partial \xi^2} \alpha_{2,0}(\phi(\tau) + \varepsilon \xi) \cdot \Pi(\xi, \tau)  \nonumber \\
+-& \frac{1}{3!} \varepsilon \frac{\partial^3}{\partial \xi^3} \alpha_{3,0}(\phi(\tau) + \varepsilon \xi) \cdot \Pi(\xi, \tau) \nonumber \\ 
++& \varepsilon \frac{\partial}{\partial \xi} \alpha_{1,1}(\phi(\tau) + \varepsilon \xi) \cdot \Pi(\xi, \tau)  +\mathcal{O}(\varepsilon^2), 
+\end{align}
+where we have rescaled time by $\varepsilon^2 f(\varepsilon)t = \tau$. Expanding the jump moments around the macroscopic variable $\phi$, 
+\begin{equation*}
+\alpha_{\nu, \lambda}(\phi(t)+\varepsilon \xi) \approx \alpha_{\nu, \lambda}(\phi) + \varepsilon \xi \alpha_{\nu,\lambda}' + \frac{1}{2} \varepsilon^2 \xi^2 \alpha_{\nu, \lambda}(\phi)'' + \mathcal{O} \varepsilon^3,
+\end{equation*}
+(where primes indicate derivatives with respect to $\phi$), and collecting terms of leading order in $\varepsilon$ we have:
+\begin{equation}
+\frac{\mathrm{d} \phi}{\mathrm{d} \tau} = \alpha_{1,0}(\phi), \label{canonical}
+\end{equation}
+which is a completely deterministic expression.  Substituting the form of $w(y|x)$ from~\eqref{approx_w} recovers the canonical equation of adaptive dynamics, Eq.~\eqref{explicitCanonical}.  Observe that the fluctuations are an order $\varepsilon$ smaller, demonstrating that this is indeed a consistent approximation.  Collecting terms of order $\varepsilon^0$ we have the partial differential equation
+\begin{equation}
+\frac{\partial}{\partial \tau}\Pi(\xi, \tau)= -\alpha_{1,0}'(\phi) \frac{\partial}{\partial \xi} \xi \Pi + \frac{1}{2} \alpha_{2,0}(\phi) \frac{\partial^2}{\partial \xi^2} \Pi \label{FP},
+\end{equation}
+while all other terms are order $\varepsilon$ or smaller.  This is a partial differential equation for the evolution of the probability distribution of traits.  It is a linear Fokker-Planck equation, hence its solution is Gaussian and $\Pi(\xi, t)$ can be described to this order of accuracy by its first two moments, 
+\begin{align*}
+\frac{\partial \langle \xi \rangle}{\partial t} &= \alpha_{1,0}'(\phi)\langle \xi \rangle, \\
+\frac{\partial \langle \xi^2 \rangle }{\partial t} &= 2\alpha_{1,0}'(\phi)\langle \xi^2 \rangle + \alpha_{2,0}(\phi),
+\end{align*}
+where prime indicates derivative with respect to the trait $x$. If $\alpha_{1,0}'(\phi)<0$ or the initial fluctuations $\langle \xi \rangle_0$ are zero, the first moment can be ignored, and the variance of the ensemble is given by transforming back into the original variables:
+\begin{equation}
+\varepsilon^2 \frac{\partial \sigma^2 }{\partial t} = 2\alpha_{1,0}'(\phi)\sigma^2 + \alpha_{2,0}(\phi). \label{fluctuation}
+\end{equation}
+ 
+Transforming between the scaled variables and the original variables requires the appropriate choice of $\varepsilon$.  The assumption that mutational steps are small provides a natural choice: $\varepsilon = \sigma_{\mu}$.   Substituting Eq.~\eqref{approx_w} to compute the jump moments, this recovers the fluctuation expression~\eqref{explicitFluctuation} in the text.  Note that even before we perform this substitution that~\eqref{fluctuation} has the same form as~\eqref{explicitFluctuation}; fluctuations grow or diminish at a rate determined by the sign of the gradient of the deterministic equation, Eq.~\eqref{canonical}. 
+ 
+ 
+ 
+\section{Chemostat Model}\label{ChemostatModel}
+The graphical model for a second scenario is also displayed in Fig.~\ref{1}. This scenario describes competition and evolution with explicit resource dynamics for a chemostat system.   We consider a resource $Q$ that flows in at rate $D$ from a reservoir fixed at concentration $Q_0$.  To retain constant volume in the chemostat, both biotic and biotic components are flushed from the system at constant rate $D$.  The chemostat contains populations with $N_i$ organisms, each of which take up nutrients at a rate $g_i$ and convert these into reproductive output with efficiency $\eta_i$, 
+\begin{align}
+	\dot Q & =  D Q_0 - D Q - \mathbf{g}(Q) \mathbf{N}, \\
+	\dot N_i & = -D N_i + \eta_i g_i(Q) N_i. 
+\end{align}
+ 
+Assume that the uptake of nutrients is governed by Michaelis-Mentin dynamics, and also that a trade-off exists between efficiency of nutrient take-up and conversion (imagining greater investment in foraging means less energy available for reproduction),
+\begin{align*}
+	g(Q) & = Q/(1+hQ),  \\
+	\eta(x) & = x, \\
+	h(x) & = x^2,
+\end{align*}
+where the trait $x$ may differ between populations.
+ 
+The associated equilibrium population size for a population with trait $x$ is 
+ 
+\begin{align*}
+	\bar N(x) & = \frac{D Q_0 - D\bar Q}{g(\bar Q, x)} = x Q_0 - \frac{xD}{x-x^2D}.
+\end{align*}
+Similarly, the resource uptake of a mutant with trait $y$ in an environment at an equilibrium set by a resident type with trait $x$ is given by 
+\begin{align*}
+	g_y(\bar Q_x) = \frac{1}{x/D-x^2+y^2},
+\end{align*}
+from which we find the invasion fitness function and its gradient,
+\begin{align*}
+	s(y,x) &= \frac{y}{x/D-x^2+y^2} - D, \\
+	\partial_y s(y,x)|_{y=x} &= \frac{D}{x} - 2D^2.
+\end{align*}
+ 
+Assuming a Gaussian mutation kernel and constant mutation rate, from Eq.~\eqref{approx_w} the transition rate function $w(y|x)$ is
+\begin{equation}
+	w(y|x) \approx \mu \left[ x Q_0 - \frac{xD}{x-x^2D}\right] \left[ \frac{D}{x} - 2D^2 \right]\frac{e^{-\frac{(y-x)^2}{2\sigma_{\mu}^2}} }{\sqrt{2\pi\sigma_{\mu}^2}}[y-x]. 
+\end{equation}
+ 
+\section{Branching Model}\label{BranchingModel}
+The model of implicit competition for a limiting resource, Eqs.~\eqref{general_logistic}-\eqref{C}, is well known to exhibit the phenomenon of evolutionary branching when the competition kernel is narrower than the resource distribution, $\sigma_c < \sigma_k$~\citep{dieckmann_nat1999}.
+Once branching occurs, the invasion fitness of a rare mutant is no longer given by $s(y,x)$ as in Eq.~\eqref{explicitS}, but instead depends on the trait values of each of the coexisting residents $x_1$ and $x_2$, as in $s(y, x_1, x_2)$. 
+This invasion fitness can still be calculated directly from the competition model,  Eqs.~\eqref{general_logistic}-\eqref{C}.  This mutant can either arise from the $x_1$ or $x_2$ population and replace it.  If we assume $x_1 = -x_2 = x$, we have the case of a symmetrically branching population.  While many realizations of branching may be close to symmetric, this is but a one-dimensional slice through a two-dimensional trait space $(x_1, x_2)$.   In this case, we can express the equilibrium density of each resident species by $K_{\text res}(x) = K(x)/(1+C(x,-x) )$.  We then consider the initial per capita growth rate of a rare mutant with trait $y$:
+
+\begin{equation}
+s(y,x, -x) = r\left( 1 - \frac{K_{\text res}(x)C(x,y) + K_{\text res}(-x) C(-x, y)}{K(y)}\right).
+\label{syxx}
+\end{equation}
+This replaces the $s(y,x)$ function for the monomorphic population, and we proceed as before to calculate $a_1(x)$ in Eq.~\eqref{explicitCanonical}.  That is, we evaluate $\partial_y s(y,x,-x)$ at $y=x$, take $K_{\text res}(x) \equiv N^{\ast}(x)$ to recover a closed-form slice of the branching landscape that is depicted in Fig.~\ref{Branching}.  The expression itself is given in the Appendix~\ref{Equations}, Eq.~\eqref{dimorphic_a1}.  
+
+
+\section{Explicit solutions for examples}\label{Equations}
+For the example logistic competition in a monomorphic population, the evolution of the mean trait $x$ is given by:
+\begin{equation}
+\frac{\ud x}{\ud t} = -\frac{x}{2\sigma^2_k} r \mu \sigma^2_{\mu} K_0 e^{-x/2\sigma^2_k} \label{logistic_a1}.
+\end{equation}
+In Fig.~\ref{1}, we choose parameters such that $r \mu K_0 \sigma_{\mu}^2 / 2  =1$ and $\sigma_k^2 = 1$.
+%Using the R package, The reader can use modify these parameters to create the analogous figure by changing the model specified in the demo admodels.R.  This holds for each of the models presented here.  The reader can also specify custom models simply by providing the equation for $a_1(x)$ as an R function.  Please see the package documentation for details.    
+
+For the chemostat:
+\begin{equation}
+	\frac{\ud x}{\ud t} = \frac{1}{2} \mu \sigma^2_{\mu} \left(Qx-\frac{D}{1-xD}\right) (D/x-2D^2) \label{chemostat_a1} .
+\end{equation}
+In Fig.~\ref{1}, we choose parameters such that $\mu \sigma^2_{\mu} = 1$, $D = 0.1$, and $Q=0.1$.  
+
+And for the symmetrically dimorphic population,
+\begin{equation}
+	\frac{\ud x}{\ud t} = \frac{-r \mu \sigma^2_{\mu} K_0 	e^{-\tfrac{x^2}{2}\left(\tfrac{4}{\sigma_c^2}-\tfrac{1}{\sigma_k^2}\right) } (\sigma^2_c+e^{\tfrac{2 x^2}{\sigma^2_c}}\sigma^2_c-2\sigma^2_k)x} { \left(1+e^{2x^2/\sigma^2_c}\right)^2 \sigma^2_c \sigma^2_k} \label{dimorphic_a1}.
+\end{equation}
+The parameters for the dimorphic population plot of Fig.~\ref{1} are chosen such that $r \mu K_0 \sigma_{\mu}^2 / 4 = 1$, $\sigma_k^2 = 2$ and $\sigma_c^2 = 1$.  
+
+The right-hand side of each of these expressions is the function $a_1(x)$ from the text, Eq.~\eqref{explicitCanonical}.  This function also determines the fluctuation dynamics by way of Eq.~\eqref{explicitFluctuation}.  The respective plots of $a_1(x)$ are used in Fig.~\ref{1}, while solving the ODEs for $\hat x(t)$ and $\sigma^2(t)$ gives the theoretical predictions of Fig.~\ref{2}.  
+
+
+
+
+\input{../settings/boilerplate}
+
